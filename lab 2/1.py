@@ -1,25 +1,26 @@
-s = input().split()
-ok = False
-k = 0
-j = 0
+s  = input().split()
 list = []
-a = []
-for i in range(0, len(s)):
+k = 0
+for i in range(len(s)):
     s[i] = int(s[i])
     list.append(s[i])
-for i in range(0, len(list)):
-    i = j
-    if i >= len(list):
-        break
+print(len(list))
+for i in range(len(list)):
+    i = k
     k = list[i] + i
-    j = k       
-    a.append(k)
-    if a[-1] >= len(s)-1:
-        ok = True
-print(a)
-if ok == True: 
-    print(1)
-else :
-    print(0)
-
-
+    i = k
+    print(k)
+    if k >= len(list)-1:
+        break
+    elif list[i] == 0:
+         for j in range(1,i):
+             j = 1
+             i = i-j
+             if list[i] == 0:
+                continue
+             else:
+                 k = i
+if k >= len(list)-1:
+    print('1')
+else:
+    print('0')
